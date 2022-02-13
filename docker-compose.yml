@@ -2,18 +2,18 @@ version: "3"
 
 services:
   api:
-    container_name: lapis-api
-    build: ./app
+    container_name: api
+    build: ./src
     ports:
       - "8080:8080"
     links:
-      - db
-    env_file:
-      - api.env
-  db:
-    container_name: mysql
-    image: mysql
+      - postgres
+    depends_on:
+      - postgres
+  postgres:
+    container_name: postgres
+    image: postgres
     ports:
-      - "3306:3306"
+      - "5432:5432"
     env_file:
       - db.env

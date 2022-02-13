@@ -40,3 +40,8 @@ luac.out
 *.hex
 
 .idea/
+src/*temp/
+.tup/
+openresty-1.19.9.1/
+**/*.log
+**/logs/
